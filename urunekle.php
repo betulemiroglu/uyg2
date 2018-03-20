@@ -34,7 +34,18 @@
 	if ($_POST["ekle"])
 	{
 		
-		
+		if($_POST["ürünadi"]=="" || $_POST["ürün markasi"]=="" || $_POST["ürün listesi"]=="")
+		{
+			echo"Eksik bilgileri doldurunuz";
+		}
+		else
+		{
+			$dosya=fopen("bilgi.txt","a");
+			$yazilacak=$_POST["ürün adi"]."-".$_POST["ürün markasi"]."-".$_POST["ürünlistele"]."-""\n";
+			fputs($dosya,$yazilacak);
+			echo"********Sisteme kayıt Yapilmistir*********";
+		}
+	}
 		
 		
 		
